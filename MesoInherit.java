@@ -10,15 +10,17 @@ public class MesoInherit extends MesoAbstract {
 	/**
 	@Override
 	*/
-	int[] calAverage() {						//Auto generated: must be implemented with PosAvg.java
+	int[] calAverage() 							//Auto generated: must be implemented with PosAvg.java
+	{						
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	/**
 	@Override
-	*/											//Auto generated: must be implemented with PosAvg.java
-	char[] letterAverage() {
+	*/											
+	char[] letterAverage() 						//Auto generated: must be implemented with letterAverage.java
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
