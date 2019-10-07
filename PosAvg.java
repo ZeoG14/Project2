@@ -1,10 +1,13 @@
 
 public class PosAvg extends MesoInherit{
 	
-	//constructor
-	public PosAvg()
-	{
+	//
+	private String stId;
 	
+	//@Param: stID is the station being send from driver
+	public PosAvg(String stID)
+	{
+		this.stId = stID;
 	}
 	
 	//from driver
