@@ -11,7 +11,7 @@ public class MesoInherit extends MesoAbstract {
 	//MesoStation object containting the stID
 	private MesoStation mesoStation;
 	
-	//
+	//Int array to hold the averages
 	private int[] average;
 	
 	//default constructor
@@ -29,20 +29,26 @@ public class MesoInherit extends MesoAbstract {
 	/**
 	@Override
 	*/
-	int[] calAverage()			//Auto generated: must be implemented with PosAvg.java
+	int[] calAverage()			
 	{		
+		average[0] = getCeiling();
+		average[1] = getCeiling();
+		average[2] = getCeiling();
+		
+		return average;
+		
 		
 	}
 	
 	/**
-	@Override
-	*/											
-	char letterAverage()						//Auto generated: must be implemented with letterAverage.java
+	 * @Overide
+	 */
+	protected char letterAverage()
 	{
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return (char)getAverage();
+		
 	}
-	
 	
 	 /**
      * Creates a list of station from the txt file. Each line of the txt represents a single station.
@@ -74,7 +80,7 @@ public class MesoInherit extends MesoAbstract {
 	
 	
 	//for loop to add up ascii values and get ceiling division
-	public void getCeiling()
+	public int getCeiling()
 	{
 		//initilizing return
 		int ceiling = 0;
@@ -92,11 +98,11 @@ public class MesoInherit extends MesoAbstract {
 		//performing ceiling rounding on the ascii average and casting to int and assigning it to ceiling
 		ceiling = (int)Math.ceil(average);
 		
-		this.average[0] = ceiling; 
+		return ceiling; 
 	}
 	
 	//for loop to add up ascii values and get floor division
-		public void getFloor()
+		public int getFloor()
 		{
 			//initilizing return
 			int floor = 0;
@@ -114,11 +120,11 @@ public class MesoInherit extends MesoAbstract {
 			//performing ceiling rounding on the ascii average and casting to int and assigning it to ceiling
 			floor = (int)Math.floor(average);
 				
-			this.average[1] = floor; 
+			return floor; 
 		}
 		
 		//for loop to add up ascii values and get ceiling division
-		public void getAverage()
+		public int getAverage()
 		{
 			//initilizing return
 			int avg = 0;
@@ -148,6 +154,6 @@ public class MesoInherit extends MesoAbstract {
 			}
 			
 				
-			this.average[2] = avg;  
+			return avg;  
 		}
 }
