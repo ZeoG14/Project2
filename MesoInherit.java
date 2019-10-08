@@ -11,6 +11,9 @@ public class MesoInherit extends MesoAbstract {
 	//MesoStation object containting the stID
 	private MesoStation mesoStation;
 	
+	//
+	private int[] average;
+	
 	//default constructor
 	public MesoInherit() throws IOException
 	{
@@ -26,10 +29,9 @@ public class MesoInherit extends MesoAbstract {
 	/**
 	@Override
 	*/
-	int[] calAverage() 							//Auto generated: must be implemented with PosAvg.java
-	{						
-		// TODO Auto-generated method stub
-		return null;
+	int[] calAverage()			//Auto generated: must be implemented with PosAvg.java
+	{		
+		
 	}
 	
 	/**
@@ -55,7 +57,6 @@ public class MesoInherit extends MesoAbstract {
     	// Throw out unnecessary data
     	strg = br.readLine();
     	strg = br.readLine();
-    	strg = br.readLine();
     	//First row containing data
     	strg = br.readLine();
 
@@ -73,7 +74,7 @@ public class MesoInherit extends MesoAbstract {
 	
 	
 	//for loop to add up ascii values and get ceiling division
-	public int getCeiling()
+	public void getCeiling()
 	{
 		//initilizing return
 		int ceiling = 0;
@@ -91,11 +92,11 @@ public class MesoInherit extends MesoAbstract {
 		//performing ceiling rounding on the ascii average and casting to int and assigning it to ceiling
 		ceiling = (int)Math.ceil(average);
 		
-		return ceiling; 
+		this.average[0] = ceiling; 
 	}
 	
 	//for loop to add up ascii values and get floor division
-		public int getFloor()
+		public void getFloor()
 		{
 			//initilizing return
 			int floor = 0;
@@ -113,11 +114,11 @@ public class MesoInherit extends MesoAbstract {
 			//performing ceiling rounding on the ascii average and casting to int and assigning it to ceiling
 			floor = (int)Math.floor(average);
 				
-			return floor; 
+			this.average[1] = floor; 
 		}
 		
 		//for loop to add up ascii values and get ceiling division
-		public int getAverage()
+		public void getAverage()
 		{
 			//initilizing return
 			int avg = 0;
@@ -147,6 +148,6 @@ public class MesoInherit extends MesoAbstract {
 			}
 			
 				
-			return avg; 
+			this.average[2] = avg;  
 		}
 }
