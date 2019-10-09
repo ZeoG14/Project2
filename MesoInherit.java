@@ -11,13 +11,10 @@ public class MesoInherit extends MesoAbstract {
 	//MesoStation object containting the stID
 	private MesoStation mesoStation;
 	
-	//Int array to hold the averages
-	private int[] average;
-	
 	//default constructor
 	public MesoInherit() throws IOException
 	{
-		readStations();
+		
 	}
 	
 	//constructor: what values need to set?
@@ -31,13 +28,13 @@ public class MesoInherit extends MesoAbstract {
 	*/
 	int[] calAverage()			
 	{		
+		int[] average = new int[3];
+		
 		average[0] = getCeiling();
-		average[1] = getCeiling();
-		average[2] = getCeiling();
-		
+		average[1] = getFloor();
+		average[2] = getAverage();
+	
 		return average;
-		
-		
 	}
 	
 	/**
@@ -88,6 +85,7 @@ public class MesoInherit extends MesoAbstract {
 		double sum = 0.0;
 		//variable to hold the double division of the sum 4 to be able to cast ceiling as an int
 		double average = 0.0;
+		
 		for(int i = 0; i < mesoStation.getStID().length(); i++ )
 		{
 			sum += mesoStation.getStID().charAt(i);
