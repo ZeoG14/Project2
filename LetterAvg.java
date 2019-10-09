@@ -27,9 +27,10 @@ public class LetterAvg extends MesoInherit
 		for(int i = 0 ; i < stations.size(); i++ )
 		{
 			toCompare = stations.get(i).toCharArray();
+			station = stations.get(i);
 			if(toCompare[0] == (this.firstLetter))
 			{
-				this.nameOfStations.addAll(toCompare);
+				this.nameOfStations.add(station);
 				numStations++;
 			}
 		}
@@ -41,7 +42,13 @@ public class LetterAvg extends MesoInherit
 	//will need to return formatted string (From driver)
 	public String toString()
 	{
-			return String.format("Total number of station starting with letter");
+			String toPrint  = String.format("They are: \n");
+			for(int i = 0; i < nameOfStations.size(); i++)
+			{
+				toPrint += nameOfStations.get(i) + "\n";
+			}
+			
+			return toPrint;
 	}
 	
 }
