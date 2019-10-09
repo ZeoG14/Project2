@@ -142,7 +142,7 @@ public class MesoInherit extends MesoAbstract {
 			//math operation to get just the fraction of the average
 			double fraction = average % 1;
 			
-			if(fraction > 0.5)
+			if(fraction >= 0.5)
 			{
 				//performing ceiling rounding on the ascii average and casting to int and assigning it to ceiling
 				avg = (int)Math.ceil(average);
