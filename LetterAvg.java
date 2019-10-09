@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.*;
 
 public class LetterAvg extends MesoInherit
 {
@@ -6,10 +7,13 @@ public class LetterAvg extends MesoInherit
 	//char for first letter
 	private char firstLetter;
 	
+	//array of strings to hold the names of the stations
+	private ArrayList<String> nameOfStations = new ArrayList<String>();
+	
 	//default constructor set initial values to 0;
-	public LetterAvg(char fLetter) throws IOException
+	public LetterAvg(char firstLetter) throws IOException
 	{
-		this.firstLetter = fLetter;
+		this.firstLetter = firstLetter;
 	}
 	
 	
@@ -19,11 +23,13 @@ public class LetterAvg extends MesoInherit
 	{
 		int numStations = 0;
 		char[] toCompare = new char[0];
+		String station;
 		for(int i = 0 ; i < stations.size(); i++ )
 		{
 			toCompare = stations.get(i).toCharArray();
 			if(toCompare[0] == (this.firstLetter))
 			{
+				this.nameOfStations.addAll(toCompare);
 				numStations++;
 			}
 		}
@@ -31,19 +37,11 @@ public class LetterAvg extends MesoInherit
 		return numStations; 
 	}
 	
-	/**
-	 * @Overide
-	 */
-	protected char letterAverage()
-	{
-		
-		return (char)getAverage();
-		
-	}
+	
 	//will need to return formatted string (From driver)
 	public String toString()
 	{
-			return null;
+			return String.format("Total number of station starting with letter");
 	}
 	
 }
