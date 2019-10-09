@@ -12,14 +12,15 @@ public class MesoInherit extends MesoAbstract {
 	private MesoStation mesoStation;
 	
 	//default constructor
-	public MesoInherit() throws IOException
+	public MesoInherit() 
 	{
 		
 	}
 	
 	//constructor: what values need to set?
-	public MesoInherit(MesoStation mesoStation)
+	public MesoInherit(MesoStation mesoStation)throws IOException
 	{
+		readStations();
 		this.mesoStation = mesoStation;
 	}
 
