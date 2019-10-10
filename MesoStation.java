@@ -11,7 +11,8 @@ public class MesoStation
 		this.stID = stId;
 	}
 
-	public String getStID() {
+	public String getStID()
+{
 		return stID;
 	}
 }
