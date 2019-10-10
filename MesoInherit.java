@@ -155,7 +155,7 @@ public class MesoInherit extends MesoAbstract {
 		double sum = 0.0;
 		// variable to hold the double division of the sum 4 to be able to cast ceiling
 		// as an int
-		double average = 0.0;
+		double rawAverage = 0.0;
 		// for loop to add up all the ascii values
 		for (int i = 0; i < mesoStation.getStID().length(); i++) 
 		{
@@ -163,24 +163,10 @@ public class MesoInherit extends MesoAbstract {
 		}
 
 		// getting the raw double ascii average
-		average = sum / mesoStation.getStID().length();
+		rawAverage = sum / mesoStation.getStID().length();
 
-		// math operation to get just the fraction of the average
-		double fraction = average % 1;
-
-		if (fraction >= 0.5) 
-		{
-			// performing ceiling division on the ascii average and casting to int and
-			// assigning it to ceiling
-			avg = (int) Math.ceil(average);
-		} 
-		else 
-		{
-			// performing floor division on the ascii average and casting to int and
-			// assigning it to ceiling
-			avg = (int) Math.floor(average);
-		}
-
+		avg  = (int)Math.round(rawAverage);
+		
 		return avg;
 	}
 
